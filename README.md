@@ -5,7 +5,7 @@
 	- username
 	- post title
 	- post content
-[] The user must be able to comment in a post
+[x] The user must be able to comment in a post
 	- username
 	- comment content
 [] The user must be able to like a post
