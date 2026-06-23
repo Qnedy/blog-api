@@ -1,7 +1,7 @@
 # Blog API
 
-[] The user must be able to list posts
-[] The user must be able to create a post
+[x] The user must be able to list posts
+[x] The user must be able to create a post
 	- username
 	- post title
 	- post content
