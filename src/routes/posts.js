@@ -77,4 +77,21 @@ export async function postsRoutes(app) {
 
     return reply.status(204).send(posts[postIndex]);
   });
+
+  app.delete("/posts/:id", { onRequest: [isAuth] }, (request, reply) => {
+    const { id } = request.params;
+
+    // I could add a validation to see if is the owner of the post the one
+    // who is trying to delete it. Using username inside the token JWT for example.
+
+    const postIndex = posts.findIndex((post) => post.id === Number(id));
+
+    if (postIndex === -1) {
+      return reply.status(404).send({ message: "Post not found." });
+    }
+
+    posts.splice(likeIndex, 1);
+
+    return reply.status(204).send(posts);
+  });
 }
