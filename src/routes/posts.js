@@ -51,7 +51,7 @@ export async function postsRoutes(app) {
 
     posts[postIndex].comments.push(comment);
 
-    return reply.status(204).send(posts);
+    return reply.status(200).send(posts);
   });
 
   app.patch("/posts/:id/like", { onRequest: [isAuth] }, (request, reply) => {
@@ -75,7 +75,7 @@ export async function postsRoutes(app) {
       posts[postIndex].likes.splice(likeIndex, 1);
     }
 
-    return reply.status(204).send(posts[postIndex]);
+    return reply.status(200).send(posts[postIndex]);
   });
 
   app.delete("/posts/:id", { onRequest: [isAuth] }, (request, reply) => {
@@ -92,6 +92,6 @@ export async function postsRoutes(app) {
 
     posts.splice(likeIndex, 1);
 
-    return reply.status(204).send(posts);
+    return reply.status(204).send();
   });
 }
