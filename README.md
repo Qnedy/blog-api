@@ -8,5 +8,5 @@
 [x] The user must be able to comment in a post
 	- username
 	- comment content
-[] The user must be able to like a post
+[x] The user must be able to like a post
 [] The user must be able to delete a post
