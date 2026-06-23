@@ -1,4 +1,5 @@
 import fastify from "fastify";
+import { postsRoutes } from "./routes/posts.js";
 
 const app = fastify({
   // posso usar somente logger: true pra ter logs padroes, mas posso usar pino-pretty pra
@@ -10,7 +11,7 @@ const app = fastify({
   },
 });
 
-// pino-pretty
+app.register(postsRoutes);
 
 app.listen({
   // é bom deixar zerado principalmente por problemas de achar localhost via docker
